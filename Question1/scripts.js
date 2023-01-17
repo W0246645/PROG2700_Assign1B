@@ -5,6 +5,9 @@
 //      Otherwise, the function will return the string with the first and last letters removed.
 // •	Example: “Triscuit” returns “tiucsirT” but “Cracker” returns “racke”.
 
+/**
+@param {string} strIn
+*/
 function changeString(strIn) {
     let strOut = "";
     if (strIn[0].toLowerCase() == strIn[strIn.length - 1]) {
