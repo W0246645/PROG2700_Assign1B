@@ -35,19 +35,23 @@ function longestStreak(array) {
         longest = tempArray.length;
         consecNums = [tempArray];
     }
-
-    consecNums.forEach(nums => {
-        let sum = 0;
-        nums.forEach(num => {
-            sum += num
+    if (longest > 1) {
+        consecNums.forEach(nums => {
+            let sum = 0;
+            nums.forEach(num => {
+                sum += num
+            });
+            if (sum > greatestSum) {
+                greatestSum = sum;
+            }
         });
-        if (sum > greatestSum) {
-            greatestSum = sum;
-        }
-    });
+    } else {
+        greatestSum = 0;
+    }
     return greatestSum;
 }
 
 console.log(longestStreak([1, 2, 3, 6, 9, 34, 2, 6]));
 console.log(longestStreak([3, 2, 7, 5, 6, 7, 3, 8, 9, 10, 23, 2, 1, 2, 3]));
 console.log(longestStreak([100, 101, 102, 3, 4, 5, 6, 9]));
+console.log(longestStreak([100, 107, 102, 3, 8, 5, 12, 9]));
